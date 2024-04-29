@@ -1,0 +1,27 @@
+:root {
+    // Palette #00204A #005792 #448EF6 #FDB44B #FEE3BD
+    --accent:               #448EF6;
+    --background-primary:   white;
+    --background-secondary: #f0f4f5;
+    --background-dark:      #2A262C;
+
+    --text:                 #222222;
+    --text-secondary:       #9D9B9E;
+    --text-dark:            white;
+
+    --border:               #434046;
+}
+
+// base
+body {
+    background-color: var(--background-primary);
+    margin: 0;
+    font-family: 'Montserrat';
+    color: var(--text);
+}
+ul {
+    padding-inline-start: unset;
+}
+li {
+    list-style-type: none;
+}
