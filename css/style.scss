@@ -13,6 +13,10 @@
 }
 
 // base
+img {
+    max-width: 100vw;
+}
+
 body {
     background-color: var(--background-primary);
     margin: 0;
