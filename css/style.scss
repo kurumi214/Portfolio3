@@ -1,11 +1,11 @@
 :root {
-    // Palette #00204A #005792 #448EF6 #FDB44B #FEE3BD
-    --accent:               #448EF6;
-    --background-primary:   white;
+    // Palette #393332 #F5E9E2 ##D44D5C #FDB44B #FEE3BD
+    --accent:               #D44D5C;
+    --background-primary:   #f5eae4;
     --background-secondary: #f0f4f5;
-    --background-dark:      #2A262C;
+    --background-dark:      #393332;
 
-    --text:                 #222222;
+    --text:                 #393332;
     --text-secondary:       #9D9B9E;
     --text-dark:            white;
 
@@ -14,7 +14,7 @@
 
 // base
 img {
-    max-width: 100vw;
+    max-width: 50vw;
 }
 
 body {
@@ -28,4 +28,88 @@ ul {
 }
 li {
     list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+// component
+.c-title {
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    &-sub, span {
+        display: block;
+        font-size: 1rem;
+    }
+}
+.c-product {
+    &-wrap {
+        display: flex;
+    }
+    &-item {
+        img {
+            object-fit: contain;
+            height: 10vh;
+        }
+    }
+}
+
+// header
+.l-header {
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    a {
+        font-size: 1.5rem;
+    }
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: var(--background-primary);
+    }
+    &-menu {
+        display: flex;
+        align-items: center;
+        &-item {
+            img {
+                width: 1.3rem;
+            }
+        }
+    }
+
+    &-login {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 48px;
+        padding: 0 24px 0 22px;
+        border: 1px solid var(--border);
+        border-radius: 9999em;
+        img {
+            height: 2rem;
+        }
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
+.l-container {
+    display: flex;
+    padding-top: 80px;
+}
+
+.l-column-left {
+    padding: 2rem 3rem;
+    background-color: var(--accent);
+    &-logo {
+        margin-bottom: 7vh;
+        img {
+            width: 26vw;
+        }
+    }
 }
