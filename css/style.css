@@ -34,6 +34,10 @@ a {
   color: unset;
 }
 
+p {
+  margin: 0;
+}
+
 .c-title {
   text-align: center;
   color: white;
@@ -79,7 +83,7 @@ a {
 
 .c-main-title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--accent);
 }
 .c-main-title span {
@@ -88,10 +92,28 @@ a {
   color: var(--text);
 }
 
+.c-packages-container {
+  margin: 0 auto;
+}
+.c-packages-txt {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+}
+.c-packages-images {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+.c-packages-images img {
+  width: 9vw;
+}
+
 .l-header {
   width: 100%;
   position: fixed;
   z-index: 99999;
+  border-bottom: solid 1px var(--border);
 }
 .l-header a {
   font-size: 1.5rem;
@@ -143,12 +165,14 @@ a {
 }
 
 .l-column-left {
+  z-index: 999;
   position: sticky;
   top: 0;
   width: 33vw;
   height: 100vh;
   padding: 2rem 3rem;
   background-color: var(--accent);
+  box-shadow: inset -10px 0 15px -10px rgba(0, 0, 0, 0.5);
 }
 .l-column-left-logo {
   margin-bottom: 7vh;
@@ -186,6 +210,7 @@ a {
 
 .l-column-main {
   width: 100vw;
+  overflow: hidden;
 }
 .l-column-main-hero-img-wrap {
   display: grid;
@@ -205,7 +230,155 @@ a {
 .l-column-main-hero-title {
   font-size: 5rem;
   position: absolute;
-  top: 8vh;
+  top: 11vh;
+}
+.l-column-main-product {
+  padding: 6vh 3vw;
+}
+.l-column-main-product-wrap {
+  padding-top: 3vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.l-column-main-product-item {
+  position: relative;
+}
+.l-column-main-product-item-img {
+  display: block;
+  width: 18vw;
+  aspect-ratio: 201/142;
+  z-index: 1;
+  border-radius: 8px 30px;
+  overflow: hidden;
+}
+.l-column-main-product-item-img img {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: auto;
+  background-color: #cae3e0;
+}
+.l-column-main-product-item-title {
+  margin: 10px 0 0 10px;
+  z-index: 100;
+  position: absolute;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+.l-column-main-product-item-more {
+  z-index: 999;
+  top: 3rem;
+  margin-left: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 0.8rem;
+}
+.l-column-main-product-item-more img {
+  width: 1.3rem;
+}
+
+.l-about-slider {
+  gap: 12px;
+  position: absolute;
+  display: flex;
+  animation: infinity-scroll-left 13s linear infinite;
+}
+.l-about-slider-container {
+  height: 31.5vh;
+  padding: 20px 0;
+  overflow: hidden;
+  background-color: #fcdba5;
+  position: relative;
+}
+.l-about-slider img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 172px;
+  height: 133px;
+}
+.l-about-slider-secondary {
+  top: 10.5rem;
+  gap: 12px;
+  position: absolute;
+  display: flex;
+  animation: infinity-scroll-right 13s linear infinite;
+}
+.l-about-slider-secondary img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 172px;
+  height: 133px;
+}
+.l-about-container {
+  background-color: var(--accent);
+}
+.l-about-container p {
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.l-about-content {
+  padding-top: 40px;
+  text-align: center;
+  color: white;
+}
+.l-about-plan-title {
+  margin-bottom: 28px;
+  font-size: 3rem;
+}
+.l-about-plan-title span {
+  display: block;
+  font-size: 2rem;
+}
+
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes infinity-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.l-product-material {
+  left: 39rem;
+  position: absolute;
+  height: 33vh;
+}
+.l-product-wrap {
+  padding-top: 244px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.l-product-item img {
+  height: 33vh;
+}
+.l-product-item-pill {
+  margin: 0 auto;
+  text-align: center;
+  width: 60px;
+  padding: 5px 20px;
+  border-radius: 9999em;
+  background-color: var(--background-primary);
+  font-size: 12px;
 }
 
 .l-column-right {
