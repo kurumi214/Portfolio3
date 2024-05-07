@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- js -->
     <script src="script.js" defer></script>
 </head>
@@ -27,14 +31,14 @@
                 <ul class="l-header-menu">
                     <li class="l-header-menu-item">
                         <a href="#">Product</a>
-                        <img src="./img/icon/chevron-down.svg" alt="矢印">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </li>
                     <li class="l-header-menu-item">
                         <a href="#">About</a>
                     </li>
                     <li class="l-header-menu-item">
                         <a href="#">FAQ</a>
-                        <img src="./img/icon/arrow-up-right-black.svg" alt="矢印">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </li>
                 </ul>
                 <div class="l-header-logo">
@@ -276,7 +280,7 @@
                 <!-- main-product -->
                 <div class="l-column-main-product">
 
-                    <h1 class="c-main-title">
+                    <h1 class="c-main-title animate__animated animate__fadeInUpBig">
                         WHAT'S<br>SPECIALS
                         <span>スペシャルズとは</span>
                     </h1>
@@ -640,6 +644,7 @@
                                 <section class="c-recipe-container">
                                     <div class="c-recipe-flip">
                                         <img src="./img/dish01.jpg" alt="料理">
+                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img" style="display: none;">
                                         <div class="c-recipe-flip-btn">
                                             <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                         </div>

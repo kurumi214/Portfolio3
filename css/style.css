@@ -61,18 +61,18 @@ p {
   padding: 5px 20px;
   border-radius: 9999em;
   background-color: var(--background-primary);
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
 }
 
 .c-buy-btn {
   position: absolute;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: var(--accent);
   height: 48px;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 228px;
   padding: 8px 50px;
   border-radius: 100vw;
   font-size: 1.3rem;
@@ -214,6 +214,28 @@ p {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  backface-visibility: hidden;
+}
+.c-recipe-flip img.active {
+  transform: rotateY(180deg);
+  opacity: 1;
+}
+.c-recipe-flip img.c-add-btn {
+  transform: rotateY(0);
+  opacity: 0;
+  display: none;
+}
+.c-recipe-flip-img {
+  transition: opacity 1s;
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.c-recipe-flip-img.active {
+  display: block;
+  opacity: 1;
 }
 .c-recipe-flip-btn {
   width: 3rem;
@@ -228,6 +250,7 @@ p {
   justify-content: center;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 .c-recipe-flip-btn img {
   width: 2rem;
@@ -265,9 +288,10 @@ p {
   border-bottom: solid 1px var(--border);
 }
 .l-header a {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .l-header-container {
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -275,11 +299,24 @@ p {
   background-color: var(--background-primary);
 }
 .l-header-menu {
+  gap: 20px;
   display: flex;
   align-items: center;
 }
-.l-header-menu-item img {
+.l-header-menu-item {
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.5s;
+}
+.l-header-menu-item:hover {
+  color: var(--accent-secondary);
+  transition: all 0.5s;
+}
+.l-header-menu-item svg {
   width: 1.3rem;
+}
+.l-header-menu-item svg:hover {
+  stroke: var(--accent-secondary);
 }
 .l-header-login {
   display: flex;
@@ -293,9 +330,11 @@ p {
 }
 .l-header-login img {
   height: 2rem;
+  cursor: pointer;
 }
 .l-header-login span {
   font-size: 1rem;
+  cursor: pointer;
 }
 .l-header-hamburger {
   height: 48px;
@@ -328,16 +367,13 @@ p {
   top: 31px;
   width: 20px;
 }
-
-.l-header-hamburger.is-active span:nth-of-type(2) {
+.l-header.is-active span:nth-of-type(2) {
   background: transparent;
 }
-
-.l-header-hamburger.is-active span:nth-of-type(1) {
+.l-header.is-active span:nth-of-type(1) {
   transform: translateY(8px) rotate(45deg);
 }
-
-.l-header-hamburger.is-active span:nth-of-type(3) {
+.l-header.is-active span:nth-of-type(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -374,16 +410,20 @@ p {
   margin-right: 20px;
 }
 .l-hamburger-news-bottom-content h1 {
-  font-size: 3rem;
+  font-size: 3vw;
   font-weight: normal;
 }
 .l-hamburger-news-bottom-content h2 {
+  gap: 10px;
   margin: 1rem 0;
-  font-size: 3.5rem;
+  font-size: 4vw;
   font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .l-hamburger-news-bottom-content h2 span {
-  padding: 5px;
+  padding: 4px 8px;
   border-radius: 100vw;
   font-size: 1rem;
   background-color: #c09862;
@@ -487,7 +527,8 @@ p {
 
 .l-container {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 500px 1fr;
   padding-top: 80px;
 }
 
@@ -495,9 +536,10 @@ p {
   z-index: 999;
   position: sticky;
   top: 0;
-  width: 33vw;
-  height: 100vh;
-  padding: 2rem 3rem;
+  height: 95vh;
+  min-height: 700px;
+  max-width: 475px;
+  padding: 2rem;
   background-color: var(--accent);
   box-shadow: inset -10px 0 15px -10px rgba(0, 0, 0, 0.5);
 }
@@ -508,10 +550,13 @@ p {
   width: 26vw;
 }
 .l-column-left-menu {
+  gap: 10px;
+  display: flex;
   position: absolute;
   bottom: 2vh;
 }
 .l-column-left-menu-item {
+  margin-bottom: 10px;
   color: white;
   list-style-type: initial;
 }
@@ -540,7 +585,7 @@ p {
 }
 
 .l-column-main {
-  width: 100vw;
+  max-width: 500px;
   overflow: hidden;
 }
 .l-column-main-hero {
@@ -565,7 +610,7 @@ p {
   width: 100%;
   font-size: 5rem;
   position: absolute;
-  top: 11vh;
+  top: 5vh;
 }
 .l-column-main-product {
   padding: 6vh 3vw;
@@ -625,13 +670,14 @@ p {
   animation: infinity-scroll-left 13s linear infinite;
 }
 .l-about-slider-container {
-  height: 20.5vh;
+  height: 281px;
   padding: 20px 0;
   overflow: hidden;
   background-color: #fcdba5;
   position: relative;
 }
 .l-about-slider img {
+  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -647,6 +693,7 @@ p {
   animation: infinity-scroll-right 13s linear infinite;
 }
 .l-about-slider-secondary img {
+  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -702,7 +749,7 @@ p {
   padding: 5px 20px;
   border-radius: 9999em;
   background-color: var(--background-primary);
-  font-size: 12px;
+  font-size: 10px;
 }
 .l-about-plan-wrap {
   margin: 70px 32px 30px 32px;
@@ -796,15 +843,15 @@ p {
 .l-description-flip-btn {
   background-color: var(--accent);
   position: absolute;
-  top: 14vh;
-  right: 10vw;
+  top: 70%;
+  right: 22%;
 }
 .l-description-flip-btn-txt {
   width: 116px;
   height: 116px;
   position: absolute;
-  top: 12.3vh;
-  right: 8vw;
+  top: 62%;
+  right: 17%;
   pointer-events: none;
   animation: rotate360 10s linear infinite;
 }
@@ -887,7 +934,7 @@ p {
   background-color: #cae3e0;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 14rem center;
+  background-position: 9rem center;
 }
 .l-product-description-section-top-product01 {
   background-image: url(../img/product01-illustration.png);
@@ -906,14 +953,14 @@ p {
   top: 7vh;
 }
 .l-product-description-section-top-material img {
-  width: 16vw;
+  width: 162px;
 }
 .l-product-description-section-top-package {
   position: absolute;
   top: 19vh;
 }
 .l-product-description-section-top-package img {
-  width: 16vw;
+  width: 162px;
 }
 
 .l-how-to-item {
@@ -960,13 +1007,12 @@ p {
 .l-mein-footer-img img {
   position: absolute;
   width: 25vw;
-  left: 48vw;
+  left: 50%;
 }
 
 .l-column-right {
   position: sticky;
   top: 0;
-  width: 33vw;
   height: 100vh;
   background-image: url(../img/culomn-right.jpg);
   background-size: cover;
