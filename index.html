@@ -6,7 +6,6 @@
     <title>Portfolio3</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- font -->
@@ -31,7 +30,7 @@
                 <ul class="l-header-menu">
                     <li class="l-header-menu-item">
                         <a href="#">Product</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </li>
                     <li class="l-header-menu-item">
                         <a href="#">About</a>
@@ -62,8 +61,8 @@
                 <img class="l-hamburger-news-top" src="./img/hamberger-menu.jpg" alt="料理">
                 <section class="l-hamburger-news-bottom">
                     <div class="l-hamburger-news-bottom-content">
-                        <h1>Nostalgic<br>Cafe</h1>
-                        <h2>05.23<span>木</span></h2>
+                        <h2>Nostalgic<br>Cafe</h2>
+                        <h3>05.23<span>木</span></h3>
                         <p>
                             レトロな喫茶店の<br>懐かしい味わいを。
                         </p>
@@ -162,7 +161,7 @@
             <div class="l-column-left">
 
                 <div class="l-column-left-logo">
-                    <img src="./img/icon/portfolio03-logo-white.drawio.svg" alt="会社ロゴ">
+                    <h1>Green Paws Organic</h1>
                 </div>
                 <div class="c-title">
                     <div class="c-title-sub">
@@ -204,16 +203,16 @@
                 <div class="l-column-left-menu">
                     <ul class="l-column-left-menu-wrap">
                         <li class="l-column-left-menu-item">
-                            Top
+                            <a href="#top" class="active">TOP</a>
                         </li>
                         <li class="l-column-left-menu-item">
-                            NEW PRODUCT
+                            <a href="#new">NEW PRODUCT</a>
                         </li>
                         <li class="l-column-left-menu-item">
-                            ABOUT
+                            <a href="#about">ABOUT</a>
                         </li>
                         <li class="l-column-left-menu-item">
-                            FEATURES
+                            <a href="#features">FEATURES</a>
                         </li>
                     </ul>
                     <div class="l-column-left-slider">
@@ -249,7 +248,7 @@
             <div class="l-column-main">
 
                 <!-- main-hero -->
-                <div class="l-column-main-hero">
+                <div class="l-column-main-hero" id="top">
                     <div class="l-column-main-hero-img-wrap">
                         <div class="l-column-main-hero-img">
                             <img src="./img/kabo-sR0cTmQHPug-unsplash.jpg" alt="メイン画像1">
@@ -262,7 +261,7 @@
                         </div>
                     </div>
 
-                    <div class="c-title l-column-main-hero-title">
+                    <div class="c-title l-column-main-hero-title animate__animated animate__zoomIn animate__delay-4s">
                         <div class="c-title-sub">
                             NEW PRODUCT
                         </div>
@@ -272,7 +271,7 @@
                         </span>
                     </div>
 
-                    <div class="c-buy-btn">
+                    <div class="c-buy-btn animate__animated animate__zoomIn animate__delay-3s">
                         ペットフードを購入する
                     </div>
                 </div>
@@ -280,10 +279,10 @@
                 <!-- main-product -->
                 <div class="l-column-main-product">
 
-                    <h1 class="c-main-title animate__animated animate__fadeInUpBig">
+                    <h2 class="c-main-title animate__animated animate__fadeInUpBig">
                         WHAT'S<br>SPECIALS
                         <span>スペシャルズとは</span>
-                    </h1>
+                    </h2>
 
                     <ul class="l-column-main-product-wrap">
                         <li class="l-column-main-product-item">
@@ -369,10 +368,10 @@
                     </div>
 
                     <!-- about container -->
-                    <section class="l-about-container">
+                    <section class="l-about-container" id="new">
                         <div class="l-about-content">
-                            <div class="l-about-title">
-                                HELLO!<span>NEW GREEN SPOON</span>
+                            <div class="l-about-title  animate__animated animate__fadeInUpBig">
+                                HELLO!<span>NEW GREEN PAWS</span>
                             </div>
                             <p>GREEN PAWSから、待望の主菜シリーズ
                                 <br>「メインディッシュ」が新登場！
@@ -483,15 +482,16 @@
                 </div>
 
                 <!-- main description -->
-                <section class="l-description">
-                    <h1 class="c-main-title">
+                <section class="l-description" id="about">
+                    <h2 class="c-main-title">
                         WHAT'S<br>SPECIALS
                         <span>スペシャルズとは</span>
-                    </h1>
+                    </h2>
                     <div class="l-description-flip">
                         <img class="l-description-flip-img" src="./img/dish01.jpg" alt="料理">
+                        <img class="l-description-flip-img inactive" src="./img/dish02.jpg" alt="料理">
                         <div class="l-description-flip-btn-wrap">
-                            <div class="c-flip-btn l-description-flip-btn">
+                            <div class="c-flip-btn l-description-flip-btn" onclick="flipImage();">
                                 <img src="./img/icon/rotate-cw.svg" alt="ボタン">
                             </div>
                             <div class="l-description-flip-btn-txt">
@@ -511,11 +511,11 @@
                 </section>
 
                 <!-- main feature -->
-                <section class="l-feature">
-                    <h1 class="c-main-title">
+                <section class="l-feature" id="features">
+                    <h2 class="c-main-title">
                         FEATURES
                         <span>スペシャルズの特徴</span>
-                    </h1>
+                    </h2>
                     <div class="l-feature-item-container">
                         <div class="l-feature-item">
                             <div class="l-feature-item-number">01</div>
@@ -559,10 +559,10 @@
                 <!-- main-product -->
                 <section class="l-column-main-product">
 
-                    <h1 class="c-main-title">
+                    <h2 class="c-main-title">
                         ALL ITEMS
                         <span>全メニューを大公開！</span>
-                    </h1>
+                    </h2>
 
                     <ul class="l-column-main-product-wrap">
                         <li class="l-column-main-product-item">
@@ -635,16 +635,16 @@
                                 </div>
                             </div>
 
-                            <h1 class="c-main-title">
+                            <h2 class="c-main-title">
                                 FOR CAT
                                 <span>ネコ用 7種類</span>
-                            </h1>
+                            </h2>
 
                             <div class="c-recipe-wrap">
                                 <section class="c-recipe-container">
                                     <div class="c-recipe-flip">
-                                        <img src="./img/dish01.jpg" alt="料理">
-                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img" style="display: none;">
+                                        <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive" >
                                         <div class="c-recipe-flip-btn">
                                             <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                         </div>
@@ -663,7 +663,8 @@
                                 <div class="c-recipe-container-small">
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish03.jpg" alt="料理">
+                                            <img src="./img/dish03.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -680,7 +681,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/slider01.jpg" alt="料理">
+                                            <img src="./img/slider01.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive"> 
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -697,7 +699,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -714,7 +717,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -746,15 +750,16 @@
                                     <img src="./img/product02.png" alt="パッケージ">
                                 </div>
                             </div>
-                            <h1 class="c-main-title">
+                            <h2 class="c-main-title">
                                 FOR DOG
                                 <span>イヌ用 7種類</span>
-                            </h1>
+                            </h2>
 
                             <div class="c-recipe-wrap">
                                 <div class="c-recipe-container">
                                     <div class="c-recipe-flip">
-                                        <img src="./img/dish03.jpg" alt="料理">
+                                        <img src="./img/dish03.jpg" alt="料理" class="c-recipe-flip-img">
+                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                         <div class="c-recipe-flip-btn">
                                             <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                         </div>
@@ -773,10 +778,11 @@
                                 <div class="c-recipe-container-small">
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish02.jpg" alt="料理">
-                                        </div>
-                                        <div class="c-recipe-flip-btn">
-                                            <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            <img src="./img/dish02.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
+                                            <div class="c-recipe-flip-btn">
+                                                <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            </div>
                                         </div>
                                         <div class="c-recipe-content">
                                             <div class="c-recipe-category">
@@ -790,10 +796,11 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
-                                        </div>
-                                        <div class="c-recipe-flip-btn">
-                                            <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
+                                            <div class="c-recipe-flip-btn">
+                                                <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            </div>
                                         </div>
                                         <div class="c-recipe-content">
                                             <div class="c-recipe-category">
@@ -807,10 +814,11 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/slider01.jpg" alt="料理">
-                                        </div>
-                                        <div class="c-recipe-flip-btn">
-                                            <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            <img src="./img/slider01.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
+                                            <div class="c-recipe-flip-btn">
+                                                <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            </div>
                                         </div>
                                         <div class="c-recipe-content">
                                             <div class="c-recipe-category">
@@ -824,10 +832,11 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
-                                        </div>
-                                        <div class="c-recipe-flip-btn">
-                                            <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
+                                            <div class="c-recipe-flip-btn">
+                                                <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                            </div>
                                         </div>
                                         <div class="c-recipe-content">
                                             <div class="c-recipe-category">
@@ -857,18 +866,19 @@
                                     <img src="./img/product02.png" alt="パッケージ">
                                 </div>
                             </div>
-                            <h1 class="c-main-title">
+                            <h2 class="c-main-title">
                                 FOR BABY
                                 <span>ベビー用 7種類</span>
-                            </h1>
+                            </h2>
 
                             <div class="c-recipe-wrap">
                                 <section class="c-recipe-container">
                                     <div class="c-recipe-flip">
-                                        <img src="./img/dish01.jpg" alt="料理">
-                                    </div>
-                                    <div class="c-recipe-flip-btn">
-                                        <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                        <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
+                                        <div class="c-recipe-flip-btn">
+                                            <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
+                                        </div>
                                     </div>
                                     <div class="c-recipe-content">
                                         <div class="c-recipe-category">
@@ -884,7 +894,8 @@
                                 <div class="c-recipe-container-small">
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish02.jpg" alt="料理">
+                                            <img src="./img/dish02.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -901,7 +912,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish03.jpg" alt="料理">
+                                            <img src="./img/dish03.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -918,7 +930,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -935,7 +948,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理" class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -968,15 +982,16 @@
                                     <img src="./img/product02.png" alt="パッケージ">
                                 </div>
                             </div>
-                            <h1 class="c-main-title">
+                            <h2 class="c-main-title">
                                 FOR SENIOR
                                 <span>シニア用 7種類</span>
-                            </h1>
+                            </h2>
 
                             <div class="c-recipe-wrap">
                                 <section class="c-recipe-container">
                                     <div class="c-recipe-flip">
-                                        <img src="./img/slider01.jpg" alt="料理">
+                                        <img src="./img/slider01.jpg" alt="料理" class="c-recipe-flip-img">
+                                        <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                         <div class="c-recipe-flip-btn">
                                             <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                         </div>
@@ -995,7 +1010,8 @@
                                 <div class="c-recipe-container-small">
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -1012,7 +1028,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish02.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -1029,7 +1046,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish01.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -1046,7 +1064,8 @@
                                     </section>
                                     <section class="c-recipe-container">
                                         <div class="c-recipe-flip">
-                                            <img src="./img/dish01.jpg" alt="料理">
+                                            <img src="./img/dish03.jpg" alt="料理"class="c-recipe-flip-img">
+                                            <img src="./img/material.jpg" alt="食材" class="c-recipe-flip-img inactive">
                                             <div class="c-recipe-flip-btn">
                                                 <img src="./img/icon/rotate-cw.svg" alt="フリップボタン">
                                             </div>
@@ -1073,10 +1092,10 @@
                 <!-- main  how-to-->
                 <section class="l-how-to">
 
-                    <h1 class="c-main-title">
+                    <h2 class="c-main-title">
                         WHAT'S<br>SPECIALS
                         <span>スペシャルズとは</span>
-                    </h1>
+                    </h2>
 
                     <div class="l-how-to-item-container">
                         <div class="l-how-to-item">
@@ -1136,7 +1155,7 @@
                 </section>
 
                 <!--  main footer-->
-                <section class="l-mein-footer">
+                <section class="l-main-footer">
 
                     <div class="c-packages-container">
                         <div class="c-packages-txt">
@@ -1161,11 +1180,6 @@
                             次回お届けに追加する
                         </div>
                     </div>
-
-                    <div class="l-mein-footer-img">
-                        <img src="./img/main-footer-illustration.png" alt="イラスト">
-                    </div>
-
                 </section>
 
             </div>
@@ -1176,6 +1190,9 @@
 
         <!-- footer -->
         <footer class="l-footer">
+            <div class="l-main-footer-img">
+                <img src="./img/main-footer-illustration.png" alt="イラスト">
+            </div>
 
             <div class="l-footer-nav-container">
 
@@ -1188,14 +1205,8 @@
                             </dt>
                             <dd class="l-footer-item">
                                 <a href="#">MAIN DISH</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">SOUP</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">SALAD</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">DRINKS</a>
                             </dd>
                         </dl>
@@ -1205,11 +1216,7 @@
                             </dt>
                             <dd class="l-footer-item">
                                 <a href="#">ABOUT US</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">PROMISE</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">NEWS</a>
                             </dd>
                         </dl>
@@ -1219,14 +1226,12 @@
                             </dt>
                             <dd class="l-footer-item">
                                 <a href="#">FAQ</a>
-                            </dd>
-                            <dd class="l-footer-item">
                                 <a href="#">CONTACT</a>
                             </dd>
                         </dl>
                         <dl class="l-footer-col">
                             <dt class="l-footer-col-title">
-                                SHOP
+                                SNS
                             </dt>
                             <dd class="l-footer-item l-footer-item-sns">
                                 <a href="#">

@@ -1,64 +1,100 @@
 
-// header hamburger menu
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.l-hamburger');
-    const headerHamburger = document.querySelector('.l-header-hamburger');
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".l-hamburger");
+    const headerHamburger = document.querySelector(".l-header-hamburger");
 
-    headerHamburger.addEventListener('click', function () {
-        headerHamburger.classList.toggle('is-active');
-        hamburger.classList.toggle('is-active');
+    headerHamburger.addEventListener("click", function () {
+        headerHamburger.classList.toggle("is-active");
+        hamburger.classList.toggle("is-active");
 
-        if (document.body.style.overflow !== 'hidden') {
-            document.body.style.overflow = 'hidden';
+        if (document.body.style.overflow !== "hidden") {
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = '';
+            document.body.style.overflow = "";
         }
     });
-});
 
-// column-left slider
-document.addEventListener('DOMContentLoaded', function() {
-    const sliderItems = document.querySelectorAll('.l-column-left-slider-item');
+    const sliderItems = document.querySelectorAll(".l-column-left-slider-item");
     let currentIndex = 0;
 
     function showSliderItem(index) {
-        // すべてのアイテムを非表示にする
-        sliderItems.forEach(item => item.style.display = 'none');
+        
+        sliderItems.forEach((item) => (item.style.opacity = "0"));
 
-        sliderItems[index].style.display = 'block';
+        sliderItems[index].style.opacity = "1";
     }
 
-    // スライドを繰り返す
+    
     function nextSliderItem() {
         currentIndex++;
-        if (currentIndex >= sliderItems.length) currentIndex = 0; // 最後のアイテムから最初に戻る
-        showSliderItem(currentIndex); // 新しいインデックスのアイテムを表示
+        if (currentIndex >= sliderItems.length) currentIndex = 0; 
+        showSliderItem(currentIndex); 
     }
 
-    // 一番最初のアイテムを表示してスタート
     showSliderItem(0);
 
     setInterval(nextSliderItem, 5000);
-});
 
-// recipe flip
-document.addEventListener('DOMContentLoaded', function() {
-    const flipBtn = document.querySelectorAll('.c-recipe-flip-btn');
+    const flipBtn = document.querySelectorAll(".c-recipe-flip-btn");
 
-    flipBtn.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const flipImages = btn.closest('.c-recipe-flip').querySelectorAll('.c-recipe-flip-img');
-            flipImages.forEach(function(img) {
-                if (img.style.display === "none") {
-                    img.style.display = "block";
-                    img.classList.add("active");
-                    img.classList.remove("inactive");
-                } else {
-                    img.style.display = "none";
-                    img.classList.add("inactive");
-                    img.classList.remove("active");
-                }
+    flipBtn.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const flipImages = btn
+                .closest(".c-recipe-flip")
+                .querySelectorAll(".c-recipe-flip-img");
+            flipImages.forEach(function (img) {
+                img.classList.toggle("inactive");
+            });
+        });
+    });
+
+    const titleElements = document.querySelectorAll(".l-footer-col-title");
+
+    titleElements.forEach(function (el) {
+        el.addEventListener("click", function () {
+            this.parentElement.classList.toggle("active");
+        });
+    });
+
+    const flipButtons = document.querySelectorAll(
+        ".c-flip-btn, .c-recipe-flip-btn"
+    );
+
+    flipButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            button.classList.add("spin-anim");
+
+            button.addEventListener("animationend", function () {
+                button.classList.remove("spin-anim");
             });
         });
     });
 });
+
+window.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("#top, #new, #features, #about");
+    const menuItems = document.querySelectorAll(".l-column-left-menu-item a");
+
+    let currentSection = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 50) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    menuItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("href") === "#" + currentSection) {
+            item.classList.add("active");
+        }
+    });
+});
+
+function flipImage() {
+    var images = document.querySelectorAll(".l-description-flip-img");
+    images.forEach(function (image) {
+        image.classList.toggle("inactive");
+    });
+}
