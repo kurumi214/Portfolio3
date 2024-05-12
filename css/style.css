@@ -108,6 +108,11 @@ p {
   color: white;
   font-weight: 700;
 }
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-packages-txt {
+    font-size: 0.8rem;
+  }
+}
 .c-packages-images {
   color: white;
   font-weight: 700;
@@ -115,6 +120,11 @@ p {
 }
 .c-packages-images img {
   width: 9vw;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-packages-images img {
+    width: 86px;
+  }
 }
 
 .c-purchase-btn {
@@ -137,6 +147,11 @@ p {
   margin-bottom: 10px;
   color: white;
   font-weight: 600;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-purchase-btn-wrap span {
+    font-size: 0.8rem;
+  }
 }
 .c-purchase-btn:hover {
   background-color: #d7e2db;
@@ -165,6 +180,11 @@ p {
   color: white;
   font-weight: 600;
 }
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-add-btn-wrap span {
+    font-size: 0.8rem;
+  }
+}
 .c-add-btn:hover {
   background-color: #d7e2db;
   transition: all 0.3s;
@@ -192,7 +212,6 @@ p {
 }
 .c-recipe-container {
   max-width: 100%;
-  position: relative;
 }
 .c-recipe-container-small {
   margin-top: 30px;
@@ -207,6 +226,7 @@ p {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -238,8 +258,8 @@ p {
   height: 3rem;
   padding: 0.5rem;
   position: absolute;
-  bottom: 9rem;
-  right: 2rem;
+  bottom: 1rem;
+  right: 1rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -255,6 +275,12 @@ p {
   border: unset !important;
   border-radius: unset !important;
   opacity: 1 !important;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-recipe-flip-btn {
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
 .c-recipe-content {
   text-align: center;
@@ -279,12 +305,26 @@ p {
   font-size: 1rem;
   color: var(--accent);
 }
+@media (max-width: 980px) and (orientation: portrait) {
+  .c-recipe-title {
+    font-size: 0.8rem;
+  }
+  .c-recipe-title span {
+    font-size: 0.7rem;
+    font-weight: normal;
+  }
+}
 
 .l-header {
   width: 100%;
   position: fixed;
-  z-index: 99999;
+  z-index: 9999999;
   border-bottom: solid 1px var(--border);
+}
+@media (min-width: 981px) {
+  .l-header.is-active {
+    border-bottom: unset;
+  }
 }
 .l-header a {
   font-size: 1rem;
@@ -297,6 +337,12 @@ p {
   align-items: center;
   padding: 10px 20px;
   background-color: var(--background-primary);
+}
+@media (min-width: 981px) {
+  .l-header-container.is-active {
+    justify-content: end;
+    background-color: transparent;
+  }
 }
 @media (max-width: 980px) and (orientation: portrait) {
   .l-header-container {
@@ -329,6 +375,11 @@ p {
 .l-header-menu-item svg:hover {
   stroke: var(--accent-secondary);
 }
+@media (min-width: 981px) {
+  .l-header-menu.is-active {
+    display: none;
+  }
+}
 .l-header-logo {
   margin-inline: auto;
 }
@@ -343,6 +394,11 @@ p {
 }
 .l-header-logo img {
   width: 100%;
+}
+@media (min-width: 981px) {
+  .l-header-logo.is-active {
+    display: none;
+  }
 }
 .l-header-login {
   display: flex;
@@ -368,7 +424,7 @@ p {
   height: 2rem;
   cursor: pointer;
 }
-.l-header-login span {
+.l-header-login-txt {
   font-size: 1rem;
   cursor: pointer;
 }
@@ -414,11 +470,10 @@ p {
 }
 
 .l-hamburger {
-  top: 82px;
   width: 100vw;
   background-color: var(--background-secondary);
   position: fixed;
-  z-index: 999999999;
+  z-index: 99899;
   display: flex;
   height: 0px !important;
   overflow: hidden;
@@ -432,7 +487,7 @@ p {
 }
 .l-hamburger.is-active {
   visibility: visible;
-  height: calc(100vh - 82px) !important;
+  height: 100vh !important;
 }
 .l-hamburger-news {
   width: 50vw;
@@ -592,7 +647,7 @@ p {
 .l-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 500px 1fr;
   background-color: white;
 }
 @media (max-width: 980px) and (orientation: portrait) {
@@ -779,6 +834,12 @@ p {
   height: 100%;
   background-color: #cae3e0;
 }
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-column-main-product-item-img img {
+    -o-object-position: 57px 9px;
+       object-position: 57px 9px;
+  }
+}
 .l-column-main-product-item-title {
   margin: 10px 0 0 10px;
   z-index: 100;
@@ -789,7 +850,7 @@ p {
 .l-column-main-product-item-more {
   width: 300px;
   z-index: 999;
-  top: 3rem;
+  top: 2rem;
   margin-left: 10px;
   position: absolute;
   display: flex;
@@ -875,10 +936,25 @@ p {
   padding-top: 244px;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-about-product-wrap {
+    padding: 80px 0 0 0;
+  }
+}
+.l-about-product-item {
+  text-align: center;
 }
 .l-about-product-item img {
   width: 20vw;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-about-product-item img {
+    padding-top: 151px;
+    width: 40vw;
+  }
 }
 .l-about-product-item-pill {
   margin: 0 auto;
@@ -962,6 +1038,11 @@ p {
 }
 .l-description {
   padding: 80px 0;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-description {
+    padding: 80px 0 0 0;
+  }
 }
 .l-description-flip {
   margin: 30px auto;
@@ -1111,12 +1192,22 @@ p {
 .l-product-description-section-top-material img {
   width: 151px;
 }
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-product-description-section-top-material img {
+    width: 30%;
+  }
+}
 .l-product-description-section-top-package {
   position: absolute;
   top: 19vh;
 }
 .l-product-description-section-top-package img {
   width: 140px;
+}
+@media (max-width: 980px) and (orientation: portrait) {
+  .l-product-description-section-top-package img {
+    width: 27%;
+  }
 }
 
 .l-how-to-item {
@@ -1167,13 +1258,8 @@ p {
 }
 .l-main-footer-img img {
   transform: translateY(-67%);
-  width: 25%;
+  width: 20rem;
   position: absolute;
-}
-@media (max-width: 980px) and (orientation: portrait) {
-  .l-main-footer-img img {
-    width: 50%;
-  }
 }
 
 .l-column-right {

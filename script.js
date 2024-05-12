@@ -3,9 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".l-hamburger");
     const headerHamburger = document.querySelector(".l-header-hamburger");
 
+    const header = document.querySelector('.l-header'); // Selects the header
+    const headerContainer = document.querySelector('.l-header-container'); // Selects the header container
+    const headerMenu = document.querySelector('.l-header-menu'); // Selects the menu
+    const headerLogo = document.querySelector('.l-header-logo');
+
     headerHamburger.addEventListener("click", function () {
         headerHamburger.classList.toggle("is-active");
         hamburger.classList.toggle("is-active");
+        header.classList.toggle("is-active");
+        headerContainer.classList.toggle("is-active");
+        headerMenu.classList.toggle("is-active");
+        headerLogo.classList.toggle("is-active");
 
         if (document.body.style.overflow !== "hidden") {
             document.body.style.overflow = "hidden";
