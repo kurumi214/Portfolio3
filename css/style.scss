@@ -378,6 +378,8 @@ p {
             }
         }
     }
+
+    // l-header-login
     &-logo {
         h1{
             a {
@@ -422,7 +424,7 @@ p {
             border: none;
             background-color: unset;
             height: unset;
-            gap: 2px;
+            gap: 5px;
         }
         img {
             height: 2rem;
@@ -774,6 +776,9 @@ p {
     overflow: hidden;
     width: 500px;
     background-color: var(--background-primary);
+    @media (max-width: 980px) and (orientation: portrait) {
+        width: 620px;
+    }
 
     &-hero {
         position: relative;
