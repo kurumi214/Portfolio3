@@ -58,6 +58,7 @@ p {
         gap: 10px;
     }
     &-item {
+        text-align: center;
         img {
             object-fit: contain;
             height: 9vh;
@@ -92,12 +93,12 @@ p {
 
 .c-main-title {
     text-align: center;
-    font-size: 2.7rem;
-    font-weight: 600;
+    font-size: 2.3rem;
+    font-weight: 500;
     color: var(--accent);
     span {
         display: block;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: var(--text);
     }
 }
@@ -134,7 +135,7 @@ p {
     padding: 17px 0;
     border-radius: 9999em;
     background-color: var(--accent-secondary);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     transition: all .3s;
 
     &-wrap {
@@ -165,7 +166,7 @@ p {
     border-radius: 9999em;
     background-color: var(--background-secondary);
     border: 1px solid var(--border);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     transition: all .3s;
 
     &-wrap {
@@ -316,18 +317,19 @@ p {
     }
 }
 
-// header
+// l-header
 .l-header {
     width: 100%;
     position: fixed;
     z-index: 9999999;
-    border-bottom: solid 1px var(--border);
+    border-bottom: solid 1px #c5c5c5;
     &.is-active {
         @media (min-width: 981px) {
             border-bottom: unset;
         }
     }
 
+    // l-header-container
     &-container {
         height: 60px;
         display: flex;
@@ -349,6 +351,8 @@ p {
             justify-content: space-between
         }
     }
+
+    // l-header-menu
     &-menu {
         @media (max-width: 980px) and (orientation: portrait) {
             display: none;
@@ -379,7 +383,7 @@ p {
         }
     }
 
-    // l-header-login
+    // l-header-logo
     &-logo {
         h1{
             a {
@@ -408,6 +412,7 @@ p {
         }
     }
 
+    // l-header-login
     &-login {
         display: flex;
         align-items: center;
@@ -416,7 +421,6 @@ p {
         padding: 0 24px 0 22px;
         border: 1px solid var(--border);
         border-radius: 9999em;
-        background-color: white;
         font-weight: 500;
 
         @media (max-width: 980px) and (orientation: portrait) {
@@ -427,11 +431,11 @@ p {
             gap: 5px;
         }
         img {
-            height: 2rem;
+            height: 1.6rem;
             cursor: pointer;
         }
         &-txt {
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
         }
     }
@@ -893,6 +897,8 @@ p {
             height: 133px;
         }
     }
+
+    // l-about-slider-secondary
     &-slider-secondary {
         top: 10.5rem;
         gap: 12px;
@@ -938,11 +944,12 @@ p {
             z-index: 10;
         }
         p {
-            font-weight: 700;
             margin-bottom: 20px;
             line-height: 2;
         }
     }
+
+    // l-about-content
     &-content {
         text-align: center;
         color: white;
@@ -950,11 +957,14 @@ p {
             display: block;
         }
     }
+
+    // l-about-title
     &-title {
-        font-size: 4rem;
+        font-size: 3rem;
+        font-weight: 600;
         margin-bottom: 30px;
         span {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
     }
 
@@ -1028,7 +1038,7 @@ p {
         }
         &-txt {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
             span {
                 font-size: 1rem;
@@ -1037,12 +1047,12 @@ p {
         }
         &-price {
             gap: 8px;
-            font-size: 2.5rem;
+            font-size: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             span {
-                padding: 8px 20px;
+                padding: 5px 15px;
                 border-radius: 9999em;
                 background-color: white;
                 font-size: 13px;
@@ -1075,12 +1085,14 @@ p {
     }
 }
 
-// main-description
+// l-description
 .l-description {
-    padding: 80px 0;
+    padding: 80px 0 0 0;
     @media (max-width: 980px) and (orientation: portrait) {
         padding: 80px 0 0 0;
     }
+
+    // l-description-flip
     &-flip {
         margin: 30px auto;
         
@@ -1097,8 +1109,8 @@ p {
             overflow: hidden;
             width: 100%;
 
-            width: 20rem;
-            height: 20rem;
+            width: 18rem;
+            height: 18rem;
             border-radius: 50%;
             object-fit: cover;
             box-sizing: border-box;
@@ -1112,6 +1124,8 @@ p {
                 transform: rotateY(540deg);
             }
         }
+
+        // l-description-flip-btn
         &-btn {
             position: absolute;
             background-color: var(--accent);
@@ -1134,6 +1148,7 @@ p {
         }
     }
 
+    // l-description-content
     &-content {
         margin: 3rem 2rem;
         &-lead {
@@ -1154,10 +1169,12 @@ p {
     }
 }
 
-// main-feature
+// l-feature
 .l-feature {
     padding: 0 2rem;
     padding-top: 80px;
+
+    // l-feature-item
     &-item{
         position: relative;
         &-container {
@@ -1187,21 +1204,20 @@ p {
             border-radius: 8px 30px;
             border: 1px solid var(--accent);
             overflow: hidden;
-            -o-object-fit: cover;
-            object-fit: cover;
-            -o-object-position: center;
-            object-position: center;
             img {
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
         }
         &-txt {
             margin: 2rem 0;
+            font-size: 0.9rem;
             &-lead {
                 margin-bottom: 1rem;
-                font-weight: 700;
-                font-size: 1.2rem;
+                font-weight: 600;
+                font-size: 1.1rem;
                 color: var(--accent);
             }
         }
@@ -1335,6 +1351,8 @@ p {
     background-color: var(--background-dark);
     color: white;
     font-size: 1rem;
+
+    // l-footer-container
     &-container {
         display: flex;
         gap: 8vw;
@@ -1343,6 +1361,8 @@ p {
             flex-direction: column;
         }
     }
+
+    // l-footer-nav
     &-nav {
         padding: 5rem 6rem;
 
@@ -1377,6 +1397,8 @@ p {
             }
         }
     }
+
+    // l-footer-col
     &-col {
         margin:  0;
         @media (max-width: 980px) and (orientation: portrait) {
@@ -1418,6 +1440,8 @@ p {
             border-bottom: none;
         }
     }
+
+    // l-footer-item
     &-item {
         margin: 0 0 0.5vh 0;
         display: flex;
@@ -1445,8 +1469,10 @@ p {
             }
         }
     }
+
+    // l-footer-logo
     &-logo {
-        padding: 0 5rem 2rem 5rem;
+        padding: 0 1rem 2rem 1rem;
         img {
             width: 100%;
         }
