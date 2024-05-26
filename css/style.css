@@ -90,6 +90,14 @@ p {
   transform: translateX(-50%);
   cursor: pointer;
 }
+@media (max-width: 620px) and (orientation: portrait) {
+  .c-buy-btn {
+    height: 40px;
+    width: 176px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
 
 .c-main-title {
   text-align: center;
@@ -107,11 +115,12 @@ p {
   margin: 0 auto;
 }
 .c-packages-txt {
+  margin-bottom: 10px;
   text-align: center;
   color: white;
   font-weight: 700;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-packages-txt {
     font-size: 0.8rem;
   }
@@ -122,11 +131,11 @@ p {
   text-align: center;
 }
 .c-packages-images img {
-  width: 9vw;
+  width: 5rem;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-packages-images img {
-    width: 86px;
+    width: 4rem;
   }
 }
 
@@ -151,7 +160,7 @@ p {
   color: white;
   font-weight: 600;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-purchase-btn-wrap span {
     font-size: 0.8rem;
   }
@@ -159,6 +168,11 @@ p {
 .c-purchase-btn:hover {
   background-color: #d7e2db;
   transition: all 0.3s;
+}
+@media (max-width: 620px) and (orientation: portrait) {
+  .c-purchase-btn {
+    font-size: 0.9rem;
+  }
 }
 
 .c-add-btn {
@@ -183,7 +197,7 @@ p {
   color: white;
   font-weight: 600;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-add-btn-wrap span {
     font-size: 0.8rem;
   }
@@ -191,6 +205,11 @@ p {
 .c-add-btn:hover {
   background-color: #d7e2db;
   transition: all 0.3s;
+}
+@media (max-width: 620px) and (orientation: portrait) {
+  .c-add-btn {
+    font-size: 0.9rem;
+  }
 }
 
 .c-flip-btn {
@@ -279,7 +298,7 @@ p {
   border-radius: unset !important;
   opacity: 1 !important;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-recipe-flip-btn {
     bottom: 1rem;
     right: 1rem;
@@ -308,7 +327,7 @@ p {
   font-size: 1rem;
   color: var(--accent);
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .c-recipe-title {
     font-size: 0.8rem;
   }
@@ -336,7 +355,7 @@ p {
   gap: 1em;
   align-items: center;
   padding: 10px 20px;
-  background-color: var(--background-primary);
+  background-color: #fffbf9;
 }
 @media (min-width: 981px) {
   .l-header-container.is-active {
@@ -344,7 +363,7 @@ p {
     background-color: transparent;
   }
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-header-container {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -355,7 +374,7 @@ p {
   display: flex;
   align-items: center;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-header-menu {
     display: none;
   }
@@ -384,18 +403,19 @@ p {
   }
 }
 .l-header-logo {
+  text-align: center;
   margin-inline: auto;
 }
 .l-header-logo h1 a {
   font-size: 4vw;
   font-weight: normal;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-header-logo h1 a {
     font-size: 7vw;
   }
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-header-logo {
     position: absolute;
     top: 50%;
@@ -422,8 +442,9 @@ p {
   border-radius: 9999em;
   font-weight: 500;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-header-login {
+    padding: 0;
     flex-direction: column;
     border: none;
     background-color: unset;
@@ -490,7 +511,7 @@ p {
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-hamburger {
     flex-direction: column-reverse;
     overflow-y: scroll;
@@ -504,7 +525,7 @@ p {
   width: 50vw;
   background-color: #144719;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-hamburger-news {
     width: 100%;
   }
@@ -576,7 +597,7 @@ p {
   width: 50vw;
   padding: 5rem;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-hamburger-menu {
     width: 100%;
     padding: 2rem;
@@ -603,7 +624,7 @@ p {
   display: flex;
   gap: 20px;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-hamburger-menu-item-wrap {
     gap: 9px;
   }
@@ -619,7 +640,7 @@ p {
   -o-object-position: center;
      object-position: center;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-hamburger-menu-item img {
     aspect-ratio: 200/400;
     width: 20vw;
@@ -661,7 +682,7 @@ p {
   grid-template-columns: 1fr 500px 1fr;
   background-color: white;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-container {
     display: flex;
   }
@@ -682,7 +703,7 @@ p {
   justify-content: start;
   align-items: center;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-column-left {
     display: none;
   }
@@ -782,7 +803,7 @@ p {
   width: 500px;
   background-color: var(--background-primary);
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-column-main {
     width: 620px;
   }
@@ -850,7 +871,7 @@ p {
   height: 100%;
   background-color: #cae3e0;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-column-main-product-item-img img {
     -o-object-position: 57px 9px;
        object-position: 57px 9px;
@@ -979,7 +1000,7 @@ p {
   align-items: center;
   position: relative;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-about-product-wrap {
     padding: 80px 0 0 0;
   }
@@ -990,7 +1011,7 @@ p {
 .l-about-product-item img {
   width: 20vw;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-about-product-item img {
     padding-top: 151px;
     width: 40vw;
@@ -1079,7 +1100,7 @@ p {
 .l-description {
   padding: 80px 0 0 0;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-description {
     padding: 80px 0 0 0;
   }
@@ -1233,7 +1254,7 @@ p {
 .l-product-description-section-top-material img {
   width: 151px;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-product-description-section-top-material img {
     width: 30%;
   }
@@ -1245,7 +1266,7 @@ p {
 .l-product-description-section-top-package img {
   width: 140px;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-product-description-section-top-package img {
     width: 27%;
   }
@@ -1262,8 +1283,8 @@ p {
   gap: 20px;
 }
 .l-how-to-item-icon img {
-  width: 150px;
-  height: 150px;
+  width: 126px;
+  height: 128px;
   border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1276,8 +1297,11 @@ p {
   color: var(--accent);
 }
 .l-how-to-item-title {
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
+}
+.l-how-to-item-txt {
+  font-size: 0.8rem;
 }
 .l-how-to-item-arrow {
   width: 150px;
@@ -1289,7 +1313,7 @@ p {
 }
 
 .l-main-footer {
-  padding: 8rem 2rem 14rem 2rem;
+  padding: 6rem 2rem 14rem 2rem;
   background-color: var(--accent);
 }
 .l-main-footer-img {
@@ -1311,7 +1335,7 @@ p {
   background-size: cover;
   box-shadow: inset 10px 0 15px -10px rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-column-right {
     display: none;
   }
@@ -1326,7 +1350,7 @@ p {
   display: flex;
   gap: 8vw;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-container {
     flex-direction: column;
   }
@@ -1334,7 +1358,7 @@ p {
 .l-footer-nav {
   padding: 5rem 6rem;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-nav {
     padding: 2em;
   }
@@ -1352,7 +1376,7 @@ p {
   font-size: 0.7rem;
   margin-top: 2em;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-nav-bottom {
     flex-direction: column;
   }
@@ -1368,7 +1392,7 @@ p {
 .l-footer-col {
   margin: 0;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-col {
     border-bottom: 1px solid var(--text-secondary);
   }
@@ -1388,7 +1412,7 @@ p {
   transition: all 0.5s;
   display: flex;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-col-title {
     color: white;
   }
@@ -1415,7 +1439,7 @@ p {
   flex-direction: column;
   gap: 0.5em;
 }
-@media (max-width: 980px) and (orientation: portrait) {
+@media (max-width: 620px) and (orientation: portrait) {
   .l-footer-item {
     transition: height 0.5s ease-in-out;
     height: 0 !important;

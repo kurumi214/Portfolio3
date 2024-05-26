@@ -89,6 +89,12 @@ p {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    @media (max-width: 620px) and (orientation: portrait) {
+        height: 40px;
+        width: 176px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
 }
 
 .c-main-title {
@@ -108,10 +114,11 @@ p {
         margin: 0 auto;
     }
     &-txt {
+        margin-bottom: 10px;
         text-align: center;
         color: white;
         font-weight: 700;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             font-size: 0.8rem;
         }
     }
@@ -120,9 +127,9 @@ p {
         font-weight: 700;
         text-align: center;
         img {
-            width: 9vw;
-            @media (max-width: 980px) and (orientation: portrait) {
-                width: 86px;
+            width: 5rem;
+            @media (max-width: 620px) and (orientation: portrait) {
+                width: 4rem;
             }
         }
     }
@@ -146,7 +153,7 @@ p {
             margin-bottom: 10px;
             color: white;
             font-weight: 600;
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 font-size: 0.8rem;
             }
         }
@@ -154,6 +161,9 @@ p {
     &:hover {
         background-color: #d7e2db;
         transition: all .3s;
+    }
+    @media (max-width: 620px) and (orientation: portrait) {
+        font-size: 0.9rem;
     }
 }
 
@@ -177,7 +187,7 @@ p {
             margin-bottom: 10px;
             color: white;
             font-weight: 600;
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 font-size: 0.8rem;
             }
         }
@@ -185,6 +195,9 @@ p {
     &:hover {
         background-color: #d7e2db;
         transition: all .3s;
+    }
+    @media (max-width: 620px) and (orientation: portrait) {
+        font-size: 0.9rem;
     }
 }
 
@@ -206,9 +219,13 @@ p {
 }
 
 .c-recipe {
+
+    // c-recipe-wrap
     &-wrap {
         padding: 3rem 2rem 7rem 2rem;
     }
+
+    // c-recipe-container
     &-container {
         max-width: 100%;
 
@@ -221,6 +238,8 @@ p {
             overflow: hidden; 
         }
     }
+
+    // c-recipe-flip
     &-flip {
         object-fit: cover;
         object-position: center;
@@ -255,6 +274,8 @@ p {
                 transform: rotateY(540deg);
             }
         }
+
+        // c-recipe-btn
         &-btn {
             width: 3rem;
             height: 3rem;
@@ -280,7 +301,7 @@ p {
                 opacity: 1 !important;
             }
 
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 bottom: 1rem;
                 right: 1rem;
             }
@@ -307,7 +328,7 @@ p {
             font-size: 1rem;
             color: var(--accent);
         }
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             font-size: 0.8rem;
             span {
                 font-size: 0.7rem;
@@ -337,7 +358,7 @@ p {
         gap: 1em;
         align-items: center;
         padding: 10px 20px;
-        background-color: var(--background-primary);
+        background-color: #fffbf9;
 
         &.is-active {
             @media (min-width: 981px) {
@@ -346,7 +367,7 @@ p {
             }
         }
 
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             flex-direction: row-reverse;
             justify-content: space-between
         }
@@ -354,7 +375,7 @@ p {
 
     // l-header-menu
     &-menu {
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             display: none;
         }
         gap: 20px;
@@ -385,17 +406,18 @@ p {
 
     // l-header-logo
     &-logo {
+        text-align: center;
         h1{
             a {
                 font-size: 4vw;
                 font-weight: normal;
-                @media (max-width: 980px) and (orientation: portrait) {
+                @media (max-width: 620px) and (orientation: portrait) {
                     font-size: 7vw;
                 }
             }
         }
         margin-inline: auto;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -423,7 +445,8 @@ p {
         border-radius: 9999em;
         font-weight: 500;
 
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
+            padding: 0;
             flex-direction: column;
             border: none;
             background-color: unset;
@@ -499,7 +522,7 @@ p {
 
     transition: all 0.5s ease-in-out;
 
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         flex-direction: column-reverse;
         overflow-y: scroll;
     }
@@ -510,7 +533,7 @@ p {
     }
     &-news {
         width: 50vw;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             width: 100%;
         }
         background-color: #144719;
@@ -580,7 +603,7 @@ p {
 
     &-menu {
         width: 50vw;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             width: 100%;
             padding: 2rem;
         }
@@ -605,7 +628,7 @@ p {
                 flex-wrap: wrap;
                 display: flex;
                 gap: 20px;
-                @media (max-width: 980px) and (orientation: portrait) {
+                @media (max-width: 620px) and (orientation: portrait) {
                     gap: 9px;
                 }
             }
@@ -617,7 +640,7 @@ p {
                 overflow: hidden;
                 object-fit: cover;
                 object-position: center;
-                @media (max-width: 980px) and (orientation: portrait) {
+                @media (max-width: 620px) and (orientation: portrait) {
                     aspect-ratio: 200 / 400;
                     width: 20vw;
                 }
@@ -661,7 +684,7 @@ p {
     background-color: white;
 
 
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         display: flex;
     }
 }
@@ -669,7 +692,7 @@ p {
 
 // column-left
 .l-column-left {
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         display: none;
     }
     z-index: 999;
@@ -780,7 +803,7 @@ p {
     overflow: hidden;
     width: 500px;
     background-color: var(--background-primary);
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         width: 620px;
     }
 
@@ -842,7 +865,7 @@ p {
                     width: 100%;
                     height: 100%;
                     background-color: #cae3e0;
-                    @media (max-width: 980px) and (orientation: portrait) {
+                    @media (max-width: 620px) and (orientation: portrait) {
                         object-position: 57px 9px;
                     }
                 }
@@ -985,7 +1008,7 @@ p {
             justify-content: center;
             align-items: center;
             position: relative;
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 padding: 80px 0 0 0;
             }
         }
@@ -993,7 +1016,7 @@ p {
             text-align: center;
             img {
                 width: 20vw;
-                @media (max-width: 980px) and (orientation: portrait) {
+                @media (max-width: 620px) and (orientation: portrait) {
                     padding-top: 151px;
                     width: 40vw;
                 }
@@ -1088,7 +1111,7 @@ p {
 // l-description
 .l-description {
     padding: 80px 0 0 0;
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         padding: 80px 0 0 0;
     }
 
@@ -1253,7 +1276,7 @@ p {
                 top: 7vh;
                 img {
                     width: 151px;
-                    @media (max-width: 980px) and (orientation: portrait) {
+                    @media (max-width: 620px) and (orientation: portrait) {
                         width: 30%;
                     }
                 }
@@ -1263,7 +1286,7 @@ p {
                 top: 19vh;
                 img {
                     width: 140px;
-                    @media (max-width: 980px) and (orientation: portrait) {
+                    @media (max-width: 620px) and (orientation: portrait) {
                         width: 27%;
                     }
                 }     
@@ -1272,8 +1295,9 @@ p {
     }
 }
 
-// main-how-to
+// l-how-to
 .l-how-to {
+    // l-how-to-item
     &-item{
         display: flex;
         align-items: center;
@@ -1283,10 +1307,12 @@ p {
             display: grid;
             gap: 20px;
         }
+
+        // l-how-to-item-icon
         &-icon {
             img {
-                width: 150px;
-                height: 150px;
+                width: 126px;
+                height: 128px;
                 border-radius: 50%;
                 -o-object-fit: cover;
                 object-fit: cover;
@@ -1295,16 +1321,23 @@ p {
                 background-color: var(--background-secondary);
             }
         }
+        // l-how-to-item-content
         &-content {
             span {
                 font-weight: 700;
                 color: var(--accent);
             }
         }
+        // l-how-to-item-title
         &-title {
-            font-size: 2rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
+        // l-how-to-item-txt
+        &-txt {
+            font-size: 0.8rem;
+        }
+        // l-how-to-item-arrow
         &-arrow {
             width: 150px;
             display: flex;
@@ -1318,7 +1351,7 @@ p {
 
 // main footer
 .l-main-footer {
-    padding: 8rem 2rem 14rem 2rem;
+    padding: 6rem 2rem 14rem 2rem;
     background-color: var(--accent);
     &-img {
         width: 100%;
@@ -1334,7 +1367,7 @@ p {
 
 // column-right
 .l-column-right {
-    @media (max-width: 980px) and (orientation: portrait) {
+    @media (max-width: 620px) and (orientation: portrait) {
         display: none;
     }
 
@@ -1357,7 +1390,7 @@ p {
         display: flex;
         gap: 8vw;
 
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             flex-direction: column;
         }
     }
@@ -1366,7 +1399,7 @@ p {
     &-nav {
         padding: 5rem 6rem;
 
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             padding: 2em;
         }
         &-container {
@@ -1376,7 +1409,7 @@ p {
         &-bottom {
             display: flex;
 
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 flex-direction: column;
             }
             justify-content: space-between;
@@ -1401,7 +1434,7 @@ p {
     // l-footer-col
     &-col {
         margin:  0;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             border-bottom: 1px solid var(--text-secondary);
             &.active .l-footer-col-title {
                 color: var(--text-secondary);
@@ -1418,7 +1451,7 @@ p {
             color: var(--text-secondary);
             transition: all 0.5s;
             display: flex;
-            @media (max-width: 980px) and (orientation: portrait) {
+            @media (max-width: 620px) and (orientation: portrait) {
                 color: white;
                 &:after {
                     content: "+";
@@ -1447,7 +1480,7 @@ p {
         display: flex;
         flex-direction: column;
         gap: 0.5em;
-        @media (max-width: 980px) and (orientation: portrait) {
+        @media (max-width: 620px) and (orientation: portrait) {
             transition: height 0.5s ease-in-out;
             height: 0 !important;
             overflow: hidden;
