@@ -83,7 +83,7 @@ p {
     width: 228px;
     padding: 8px 50px;
     border-radius: 100vw;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: white;
     bottom: 1em;
     left: 50%;
@@ -515,7 +515,9 @@ p {
     position: fixed;
     z-index: 99899;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    height: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
 
 
     // l-header-product-wrap
@@ -532,6 +534,8 @@ p {
         width: 14vw;
         aspect-ratio: 230 / 300;
         border-radius: 2vw;
+        font-size: 0.7rem;
+        text-align: center;
         &-maindish {
             background-image: url(/img/hamburger-menu01.jpg);
             background-size: cover;
@@ -549,13 +553,17 @@ p {
             background-size: cover;
         }
 
-        // l-header-product-txt
+        // l-header-product-item-txt
         &-txt {
+            margin-top: 1rem;
             text-align: center;
-            position: absolute;
             color: white;
-            top: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            span {
+                font-size: 0.8rem;
+                display: block;
+            }
         }
     }
 
@@ -563,6 +571,8 @@ p {
         padding-top: 2rem;
         margin-top: 2rem;
         border-top: solid 1px var(--text-secondary);
+        cursor: pointer;
+        transition: all .3s;
         &-txt {
             gap: 1rem;
             display: flex;
@@ -571,14 +581,26 @@ p {
             top: 1rem;
             font-size: 1rem;
 
-            img {
-                height: 1.5rem;
+            svg {
+                width: 1.3rem;
+                &:hover {
+                    stroke: var(--accent-secondary);
+                }
             }
+        }
+        &:hover {
+            color: var(--accent-secondary);
+            transition: all .3s;
         }
     }
 }
+.l-header-product.active {
+    display: block;
+    height: 325px;
+    visibility: visible;
+}
 
-// hamburger
+// hamburger5
 .l-hamburger {
     width: 100%;
     background-color: var(--background-secondary);
@@ -682,16 +704,17 @@ p {
                 font-size: 1rem;
             }
             &-wrap {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
                 flex-wrap: wrap;
-                display: flex;
-
             }
         }
         &-item {
             position: relative;
-            display: flex;
-            justify-content: center;
+            border-radius: 10px;
+            aspect-ratio: 1 / 1;
+
             &-wrap {
                 flex-wrap: wrap;
                 display: flex;
@@ -700,25 +723,26 @@ p {
                     gap: 9px;
                 }
             }
+
             img {
-                margin-bottom: 10px;
                 width: 14vw;
-                aspect-ratio: 200 / 200;
-                border-radius: 2vw;
+                border-radius: 1vw;
                 overflow: hidden;
                 object-fit: cover;
                 object-position: center;
                 @media (max-width: 979px) and (orientation: portrait) {
-                    aspect-ratio: 200 / 400;
                     width: 20vw;
                 }
             }
+
             &-txt {
-                text-align: center;
                 position: absolute;
                 top: 1rem;
                 color: white;
                 font-size: 1.5rem;
+                left: 50%;
+                text-align: center;
+                transform: translateX(-50%);
                 span {
                     display: block;
                     font-size: 1rem;
@@ -1471,6 +1495,8 @@ p {
             padding: 2em;
         }
         &-container {
+            display: flex;
+            justify-content: center;
             z-index: 9999;
             position: relative;
         }

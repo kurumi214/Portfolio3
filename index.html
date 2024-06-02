@@ -29,7 +29,7 @@
             <div class="l-header-container">
                 <ul class="l-header-menu">
                     <li class="l-header-menu-item">
-                        <a href="#">Product</a>
+                        <a href="#" id="is-active">Product</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </li>
                     <li class="l-header-menu-item">
@@ -57,7 +57,7 @@
             </div>
         </header>
 
-        <div class="l-header-product">
+        <div class="l-header-product active" id="content-to-show">
             <ul class="l-header-product-wrap">
                 <li class="l-header-product-item l-header-product-item-maindish">
                     <div class="l-header-product-item-txt">
@@ -87,7 +87,7 @@
             <div class="l-header-product-link">
                 <div class="l-header-product-link-txt">
                     ALL PRODUCTS
-                    <img src="./img/icon/arrow-up-right-black.svg" alt="矢印">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </div>
             </div>
         </div>
@@ -130,30 +130,38 @@
                         ALL PRODUCTS<span>全ての商品</span>
                     </div>
                     <ul class="l-hamburger-menu-item-wrap">
-                        <li class="l-hamburger-menu-item">
-                            <img loading="lazy" src="./img/hamburger-menu01.jpg" alt="料理">
-                            <div class="l-hamburger-menu-item-txt">
-                                MAIN DISH<span>メインディッシュ</span>
-                            </div>
-                        </li>
-                        <li class="l-hamburger-menu-item">
-                            <img loading="lazy" src="./img/hamburger-menu02.jpg" alt="料理">
-                            <div class="l-hamburger-menu-item-txt">
-                                SOUP<span>スープ</span>
-                            </div>
-                        </li>
-                        <li class="l-hamburger-menu-item">
-                            <img loading="lazy" src="./img/hamburger-menu03.jpg" alt="料理">
-                            <div class="l-hamburger-menu-item-txt">
-                                SALAD<span>サラダ</span>
-                            </div>
-                        </li>
-                        <li class="l-hamburger-menu-item">
-                            <img loading="lazy" src="./img/hamburger-menu04.jpg" alt="料理">
-                            <div class="l-hamburger-menu-item-txt">
-                                SMOOTHIE<span>スムージー</span>
-                            </div>
-                        </li>
+                        <a href="#" class="l-hamburger-menu-item">
+                            <li>
+                                <img loading="lazy" src="./img/hamburger-menu01.jpg" alt="料理">
+                                <div class="l-hamburger-menu-item-txt">
+                                    MAIN DISH<span>メインディッシュ</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#" class="l-hamburger-menu-item">
+                            <li>
+                                <img loading="lazy" src="./img/hamburger-menu02.jpg" alt="料理">
+                                <div class="l-hamburger-menu-item-txt">
+                                    SOUP<span>スープ</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#" class="l-hamburger-menu-item">
+                            <li>
+                                <img loading="lazy" src="./img/hamburger-menu03.jpg" alt="料理">
+                                <div class="l-hamburger-menu-item-txt">
+                                    SALAD<span>サラダ</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#" class="l-hamburger-menu-item">
+                            <li>
+                                <img loading="lazy" src="./img/hamburger-menu04.jpg" alt="料理">
+                                <div class="l-hamburger-menu-item-txt">
+                                    SMOOTHIE<span>スムージー</span>
+                                </div>
+                            </li>
+                        </a>
                     </ul>
 
                     <ul class="l-hamburger-menu-title-wrap">
@@ -304,9 +312,9 @@
                         </span>
                     </div>
 
-                    <div class="c-buy-btn animate__animated animate__zoomIn animate__delay-3s">
+                    <a href="#" class="c-buy-btn animate__animated animate__zoomIn animate__delay-3s">
                         ペットフードを購入する
-                    </div>
+                    </a>
                 </div>
 
                 <!-- main-product -->
@@ -482,7 +490,7 @@
                             </div>
                             <div class="c-purchase-btn-wrap">
                                 <span>GREEN PAWSを初めてご利用の方</span>
-                                <a class="c-purchase-btn">
+                                <a href="#" class="c-purchase-btn">
                                     購入する
                                 </a>
                             </div>
