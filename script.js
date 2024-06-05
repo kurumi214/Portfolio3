@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    // スライドショー
+
+
+    setInterval(slide_time, 1500);
+
+
     // スライダーアイテムを選択
     const sliderItems = document.querySelectorAll(".l-column-left-slider-item"); 
     let currentIndex = 0; // 現在のインデックス

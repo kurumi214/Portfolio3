@@ -507,7 +507,6 @@ p {
   background-color: var(--background-primary);
   position: fixed;
   z-index: 99899;
-  overflow: hidden;
   height: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
@@ -522,7 +521,7 @@ p {
   position: relative;
   width: 14vw;
   aspect-ratio: 230/300;
-  border-radius: 2vw;
+  border-radius: 0.5vw;
   font-size: 0.7rem;
   text-align: center;
 }
@@ -688,21 +687,42 @@ p {
   }
 }
 .l-hamburger-menu-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .l-hamburger-menu-title span {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  margin-left: 10px;
 }
 .l-hamburger-menu-title-wrap {
+  margin: 62px 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   flex-wrap: wrap;
 }
 .l-hamburger-menu-item {
   position: relative;
+  overflow: hidden;
+  width: 11vw;
   border-radius: 10px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 370/370;
+}
+.l-hamburger-menu-item-maindish {
+  background-image: url(/img/hamburger-menu01.jpg);
+  background-size: cover;
+}
+.l-hamburger-menu-item-soup {
+  background-image: url(/img/hamburger-menu02.jpg);
+  background-size: cover;
+}
+.l-hamburger-menu-item-salad {
+  background-image: url(/img/hamburger-menu03.jpg);
+  background-size: cover;
+}
+.l-hamburger-menu-item-smoothie {
+  background-image: url(/img/hamburger-menu04.jpg);
+  background-size: cover;
 }
 .l-hamburger-menu-item-wrap {
   flex-wrap: wrap;
@@ -715,8 +735,7 @@ p {
   }
 }
 .l-hamburger-menu-item img {
-  width: 14vw;
-  border-radius: 1vw;
+  border-radius: 0.5vw;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -729,13 +748,10 @@ p {
   }
 }
 .l-hamburger-menu-item-txt {
-  position: absolute;
-  top: 1rem;
+  margin-top: 20px;
   color: white;
-  font-size: 1.5rem;
-  left: 50%;
+  font-size: 1.2rem;
   text-align: center;
-  transform: translateX(-50%);
 }
 .l-hamburger-menu-item-txt span {
   display: block;
@@ -750,13 +766,13 @@ p {
 .l-hamburger-menu-sns li {
   background-color: var(--background-dark);
   height: 48px;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 100vw;
 }
 .l-hamburger-menu-sns img {
   margin-top: 11px;
-  width: 2rem;
+  width: 1.5rem;
   height: auto;
 }
 
@@ -1082,6 +1098,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   position: relative;
 }
 @media (max-width: 979px) and (orientation: portrait) {
@@ -1091,9 +1108,12 @@ p {
 }
 .l-about-product-item {
   text-align: center;
+  transition: transform 2s ease-in-out;
+  list-style: none;
+  transform: translateX(100%);
 }
 .l-about-product-item img {
-  width: 20vw;
+  width: 11rem;
 }
 @media (max-width: 979px) and (orientation: portrait) {
   .l-about-product-item img {
@@ -1432,7 +1452,8 @@ p {
 }
 .l-footer-container {
   display: flex;
-  gap: 8vw;
+  justify-content: space-between;
+  gap: 10vw;
 }
 @media (max-width: 979px) and (orientation: portrait) {
   .l-footer-container {
@@ -1440,7 +1461,7 @@ p {
   }
 }
 .l-footer-nav {
-  padding: 5rem 6rem;
+  padding: 5rem 9rem;
 }
 @media (max-width: 979px) and (orientation: portrait) {
   .l-footer-nav {
@@ -1448,8 +1469,6 @@ p {
   }
 }
 .l-footer-nav-container {
-  display: flex;
-  justify-content: center;
   z-index: 9999;
   position: relative;
 }
