@@ -338,6 +338,13 @@ p {
     }
 }
 
+.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+
 // l-header
 .l-header {
     width: 100%;
@@ -917,8 +924,8 @@ p {
 
 // column-main
 .l-column-main {
-    margin: 0 auto;
     overflow: hidden;
+    margin: 0 auto;
     width: 500px;
     background-color: var(--background-primary);
     @media (max-width: 979px) and (orientation: portrait) {
@@ -1094,6 +1101,7 @@ p {
     &-content {
         text-align: center;
         color: white;
+        
         span {
             display: block;
         }
@@ -1113,30 +1121,36 @@ p {
     &-product {
         &-container {
             position: relative;
+            display: flex;
+            justify-content: center;
         }
         &-material{
-            left: 50%;
-            transform: translateX(-50%);
+            left: 25%;
             position: absolute;
-            height: 19em;
+            height: 15em;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
         }
         &-wrap {
             padding-top: 244px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden; 
             position: relative;
+            min-width: calc(5 * (1.5em + 1.5em + 11em));
+
+            max-height: 288px;
+
             @media (max-width: 979px) and (orientation: portrait) {
                 padding: 80px 0 0 0;
             }
         }
         &-item {
             text-align: center;
-            transition: transform 2s ease-in-out;
             list-style: none;
-            transform: translateX(100%); 
+            display: inline-block;
+            width: 14em;
+            height: 5em;
+
             img {
+                margin-inline: 1.5em;
                 width: 11rem;
                 @media (max-width: 979px) and (orientation: portrait) {
                     padding-top: 151px;
@@ -1154,8 +1168,16 @@ p {
             }
         }
     }
+    #material.expand {
+        transform: scale(1);
+        opacity: 1;
+    }
+    #material.shrink {
+        transform: scale(0.8);
+        opacity: 0;
+    }
 
-    // plan
+    // l-about-plan
     &-plan{
         &-wrap {
             margin: 70px 32px 30px 32px;
@@ -1369,7 +1391,7 @@ p {
     }
 }
 
-// main-product-description
+// l-product-description
 .l-product-description {
     &-section {
         &-top {
@@ -1493,6 +1515,7 @@ p {
         display: none;
     }
 
+    z-index: 999;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -1642,3 +1665,4 @@ p {
 .spin-anim {
     animation: spin 0.5s ease-in-out forwards;
 }
+

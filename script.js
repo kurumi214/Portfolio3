@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ヘッダーハンバーガーボタンと関連要素を選択
     const hamburger = document.querySelector(".l-hamburger"); // ハンバーガーボタンを選択
     const headerHamburger = document.querySelector(".l-header-hamburger"); // ヘッダーハンバーガーボタンを選択
 
@@ -7,93 +8,139 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerMenu = document.querySelector('.l-header-menu'); // メニューを選択
     const headerLogo = document.querySelector('.l-header-logo'); // ロゴを選択
 
-    // l-header-hamburgerボタンをクリックしたときのイベントリスナー
-    headerHamburger.addEventListener("click", function () {
-        // 各要素のクラスをトグルする
-        headerHamburger.classList.toggle("is-active");
-        hamburger.classList.toggle("is-active");
-        header.classList.toggle("is-active");
-        headerContainer.classList.toggle("is-active");
-        headerMenu.classList.toggle("is-active");
-        headerLogo.classList.toggle("is-active");
+    if (headerHamburger && hamburger && header && headerContainer && headerMenu && headerLogo) {
+        // l-header-hamburgerボタンをクリックしたときのイベントリスナー
+        headerHamburger.addEventListener("click", function () {
+            // 各要素のクラスをトグルする
+            headerHamburger.classList.toggle("is-active");
+            hamburger.classList.toggle("is-active");
+            header.classList.toggle("is-active");
+            headerContainer.classList.toggle("is-active");
+            headerMenu.classList.toggle("is-active");
+            headerLogo.classList.toggle("is-active");
 
-        // ボディのオーバーフローを制御
-        if (document.body.style.overflow !== "hidden") {
-            document.body.style.overflow = "hidden"; // オーバーフローを隠す
-        } else {
-            document.body.style.overflow = ""; // オーバーフローを通常に戻す
-        }
-    });
+            // ボディのオーバーフローを制御
+            if (document.body.style.overflow !== "hidden") {
+                document.body.style.overflow = "hidden"; // オーバーフローを隠す
+            } else {
+                document.body.style.overflow = ""; // オーバーフローを通常に戻す
+            }
+        });
+    }
 
-    
     // l-header-product-item Productをホバーしたときのイベントリスナー
     const hoverTarget = document.getElementById("is-active");
     const contentToShow = document.getElementById("content-to-show");
 
-    // ホバーしたときのアクティブ化処理
-    hoverTarget.addEventListener("mouseenter", function () {
-        contentToShow.classList.add("active");
-    });
+    if (hoverTarget && contentToShow) {
+        // ホバーしたときのアクティブ化処理
+        hoverTarget.addEventListener("mouseenter", function () {
+            contentToShow.classList.add("active");
+        });
 
-    hoverTarget.addEventListener("mouseleave", function () {
-        setTimeout(function() {
-            if (!contentToShow.matches(':hover')) {
+        hoverTarget.addEventListener("mouseleave", function () {
+            setTimeout(function () {
+                if (!contentToShow.matches(':hover')) {
+                    contentToShow.classList.remove("active");
+                }
+            }, 100);
+        });
+
+        contentToShow.addEventListener("mouseleave", function () {
+            if (!hoverTarget.matches(':hover')) {
                 contentToShow.classList.remove("active");
             }
-        }, 100);
-    });
+        });
+    }
 
-    contentToShow.addEventListener("mouseleave", function () {
-        if (!hoverTarget.matches(':hover')) {
-            contentToShow.classList.remove("active");
-        }
-    });
 
+
+    // 拡大アニメーション
+    const slideShowTiming = 4000
+
+    const image = document.getElementById('material');
+    setInterval(() => {
+        image.classList.toggle("expand")
+        image.classList.toggle("shrink")
+    }, (slideShowTiming / 2));
 
     // スライドショー
+    setInterval(() => {
+        const productItems = document.querySelectorAll('.l-about-product-item')
+        const productContainer = document.querySelector(".l-about-product-wrap")
 
-
-    setInterval(slide_time, 1500);
+        while (productItems.length > 5) {
+            productItems[productItems.length - 1].remove()
+            productItems = document.querySelectorAll('.l-about-product-item')
+        }
+        
+        let frameCounter = 1
+        const frameMax = 60
+        const animationTime = 600
+        
+        
+        const frameInterval = setInterval(() => {
+            let position = (14 - (14 * frameCounter / frameMax))
+            if (position < 0) position = 0
+            
+            productItems[0].style.width = position + "em"
+            frameCounter++
+            
+            if (frameCounter > frameMax) {
+                
+                productItems[0].style.width = "14em";
+                
+                const firstItem = productItems[0].cloneNode(true)
+                productItems[0].remove()
+                productContainer.appendChild(firstItem)
+                
+                clearInterval(frameInterval);
+            }
+        }, (animationTime / frameMax))
+    }, slideShowTiming);
 
 
     // スライダーアイテムを選択
     const sliderItems = document.querySelectorAll(".l-column-left-slider-item"); 
-    let currentIndex = 0; // 現在のインデックス
+    let sliderCurrentIndex = 0; // 現在のインデックス
 
-    function showSliderItem(index) {
-        // すべてのスライダーアイテムの不透明度を0に設定
-        sliderItems.forEach((item) => (item.style.opacity = "0"));
+    if (sliderItems.length > 0) {
+        function showSliderItem(index) {
+            // すべてのスライダーアイテムの不透明度を0に設定
+            sliderItems.forEach((item) => (item.style.opacity = "0"));
 
-        // 指定されたインデックスのアイテムのみ不透明にする
-        sliderItems[index].style.opacity = "1";
+            // 指定されたインデックスのアイテムのみ不透明にする
+            sliderItems[index].style.opacity = "1";
+        }
+
+        function nextSliderItem() {
+            // インデックスを増加
+            sliderCurrentIndex++;
+            if (sliderCurrentIndex >= sliderItems.length) sliderCurrentIndex = 0; // インデックスが範囲を超えたらリセット
+            showSliderItem(sliderCurrentIndex); // 次のアイテムを表示
+        }
+
+        showSliderItem(0);
+
+        // スライダーアイテムを5秒ごとに切り替える
+        setInterval(nextSliderItem, 5000);
     }
 
-    function nextSliderItem() {
-        // インデックスを増加
-        currentIndex++;
-        if (currentIndex >= sliderItems.length) currentIndex = 0; // インデックスが範囲を超えたらリセット
-        showSliderItem(currentIndex); // 次のアイテムを表示
-    }
-
-    showSliderItem(0); // 最初のアイテムを表示
-
-    // スライダーアイテムを5秒ごとに切り替える
-    setInterval(nextSliderItem, 5000);
-
-    const flipBtn = document.querySelectorAll(".c-recipe-flip-btn"); // レシピフリップボタンを選択
+    // レシピフリップボタンを選択
+    const flipBtn = document.querySelectorAll(".c-recipe-flip-btn");
 
     flipBtn.forEach(function (btn) {
         // フリップボタンのクリックイベントリスナー
         btn.addEventListener("click", function () {
             const flipImages = btn.closest(".c-recipe-flip").querySelectorAll(".c-recipe-flip-img");
-            // フリップ画像のクラスをトグルする
             flipImages.forEach(function (img) {
-                img.classList.toggle("inactive");
+                img.classList.toggle("inactive"); // フリップ画像のクラスをトグルする
             });
         });
     });
 
-    const titleElements = document.querySelectorAll(".l-footer-col-title"); // フッターのタイトルエレメントを選択
+    // フッターのタイトルエレメントを選択
+    const titleElements = document.querySelectorAll(".l-footer-col-title");
 
     titleElements.forEach(function (el) {
         // フッタータイトルのクリックイベントリスナー
@@ -102,14 +149,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    const flipButtons = document.querySelectorAll(".c-flip-btn, .c-recipe-flip-btn"); // フリップボタンを選択
+    // フリップボタンを選択
+    const flipButtons = document.querySelectorAll(".c-flip-btn, .c-recipe-flip-btn");
 
     flipButtons.forEach(function (button) {
         // フリップボタンのクリックイベントリスナー
         button.addEventListener("click", function () {
             button.classList.add("spin-anim"); // スピンアニメーションを追加
-
-            // アニメーション終了時にクラスを削除
             button.addEventListener("animationend", function () {
                 button.classList.remove("spin-anim");
             });
@@ -117,17 +163,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 // スクロールイベントリスナー
 window.addEventListener("scroll", function () {
     const sections = document.querySelectorAll("#top, #new, #features, #about"); // セクションを選択
     const menuItems = document.querySelectorAll(".l-column-left-menu-item a"); // メニューアイテムを選択
 
-    let currentSection = ""; // 現在のセクション
+    let currentSection = "";
 
     sections.forEach((section) => {
-        const sectionTop = section.offsetTop; // セクションの上端位置
-        if (scrollY >= sectionTop - 50) {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 50) {
             currentSection = section.getAttribute("id"); // 現在のセクションを更新
         }
     });
@@ -145,6 +190,6 @@ window.addEventListener("scroll", function () {
 function flipImage() {
     var images = document.querySelectorAll(".l-description-flip-img"); // フリップ画像を選択
     images.forEach(function (image) {
-        image.classList.toggle("inactive"); // 画像のクラスをトグルする
+        image.classList.toggle("inactive");
     });
 }
