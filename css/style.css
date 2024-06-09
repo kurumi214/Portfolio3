@@ -700,6 +700,11 @@ p {
   font-size: 0.8rem;
   margin-left: 10px;
 }
+@media (max-width: 979px) and (orientation: portrait) {
+  .l-hamburger-menu-title span {
+    display: block;
+  }
+}
 .l-hamburger-menu-title-wrap {
   margin: 62px 0;
   display: grid;
@@ -710,7 +715,7 @@ p {
 .l-hamburger-menu-item {
   position: relative;
   overflow: hidden;
-  width: 11vw;
+  width: 9rem;
   border-radius: 10px;
   aspect-ratio: 370/370;
 }
@@ -1103,14 +1108,13 @@ p {
   opacity: 0;
 }
 .l-about-product-wrap {
-  padding-top: 244px;
+  padding-top: 167px;
   position: relative;
   min-width: 70em;
-  max-height: 288px;
 }
 @media (max-width: 979px) and (orientation: portrait) {
   .l-about-product-wrap {
-    padding: 80px 0 0 0;
+    padding: 40px 0 0 0;
   }
 }
 .l-about-product-item {
