@@ -57,12 +57,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 拡大アニメーション
     const slideShowTiming = 4000
+    const transitionDelay = 600;
 
     const image = document.getElementById('material');
-    setInterval(() => {
-        image.classList.toggle("expand")
-        image.classList.toggle("shrink")
-    }, (slideShowTiming / 2));
+
+    image.classList.add('expand');
+    function startAnimation() {
+
+        setTimeout(function startShrinkExpandCycle() {
+            image.classList.remove("expand");
+            image.classList.add("shrink");
+
+            setTimeout(() => {
+                image.classList.remove("shrink");
+                image.classList.add("expand");
+            }, transitionDelay);
+
+            setTimeout(startShrinkExpandCycle, slideShowTiming);
+        }, slideShowTiming);
+    }
+
+    startAnimation();
 
     // スライドショー
     setInterval(() => {

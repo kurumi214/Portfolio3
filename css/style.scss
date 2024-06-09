@@ -1128,13 +1128,14 @@ p {
             justify-content: center;
         }
         &-material{
-            left: 25%;
+            display: flex;
+            justify-content: center;
             position: absolute;
             height: 15em;
-            transition: transform 0.5s, opacity 0.5s;
-            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
         }
         &-wrap {
+            height: 346px;
             padding-top: 167px;
             position: relative;
             min-width: calc(5 * (1.5em + 1.5em + 11em));
