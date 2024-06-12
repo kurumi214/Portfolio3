@@ -42,6 +42,41 @@ p {
   margin: 0;
 }
 
+.e {
+  opacity: 0;
+}
+
+.e-v {
+  animation: fadeInUP 1.3s ease forwards;
+}
+
+@keyframes fadeInUP {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.bigger {
+  opacity: 0;
+}
+
+.bigger-visible {
+  opacity: 1;
+  animation: bigger 0.5s ease forwards;
+}
+
+@keyframes bigger {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .c-title {
   text-align: center;
   color: white;
@@ -510,7 +545,7 @@ p {
 .l-header-product {
   width: 100%;
   padding: 9rem 0rem 2rem 0rem;
-  background-color: var(--background-primary);
+  background-color: #fffbf9;
   position: fixed;
   z-index: 99899;
   height: 0;
@@ -625,11 +660,13 @@ p {
      object-fit: contain;
 }
 .l-hamburger-news-bottom {
-  padding: 2rem;
+  padding: 2rem 4rem 0 4rem;
   display: flex;
+  justify-content: space-between;
   color: #c09862;
 }
 .l-hamburger-news-bottom-content {
+  width: 18rem;
   margin-right: 20px;
 }
 .l-hamburger-news-bottom-content h2 {
@@ -655,16 +692,19 @@ p {
 .l-hamburger-news-bottom-content p {
   font-size: 1rem;
 }
+.l-hamburger-news-bottom-menu {
+  width: 8rem;
+}
 .l-hamburger-news-bottom-menu-wrap {
   gap: 10px;
   display: flex;
 }
 .l-hamburger-news-bottom-menu-img {
   margin-bottom: 10px;
-  width: 12vw;
+  width: 8rem;
   aspect-ratio: 200/200;
-  border-radius: 2vw;
-  border: 2px solid #c09862;
+  border-radius: 1vw;
+  border: 1px solid #c09862;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -695,6 +735,13 @@ p {
 .l-hamburger-menu-title {
   font-size: 1.5rem;
   font-weight: 500;
+}
+.l-hamburger-menu-title a {
+  transition: all 0.5s;
+}
+.l-hamburger-menu-title a:hover {
+  color: var(--accent-secondary);
+  transition: all 0.5s;
 }
 .l-hamburger-menu-title span {
   font-size: 0.8rem;
@@ -1390,7 +1437,7 @@ p {
   top: 19vh;
 }
 .l-product-description-section-top-package img {
-  width: 140px;
+  width: 135px;
 }
 @media (max-width: 979px) and (orientation: portrait) {
   .l-product-description-section-top-package img {

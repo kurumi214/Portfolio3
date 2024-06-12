@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // ボディのオーバーフローを制御
             if (document.body.style.overflow !== "hidden") {
-                document.body.style.overflow = "hidden"; // オーバーフローを隠す
+                document.body.style.overflow = "hidden"; 
             } else {
-                document.body.style.overflow = ""; // オーバーフローを通常に戻す
+                document.body.style.overflow = ""; 
             }
         });
     }
@@ -51,6 +51,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 contentToShow.classList.remove("active");
             }
         });
+    }
+
+
+    // 可視範囲に入ったらアニメーションを発火
+    const observer = new IntersectionObserver(function(entries) {
+        for(let i = 0; i < entries.length; i++) {
+        // 領域内なら処理を実行
+        if (entries[i].intersectionRatio <= 0) continue;
+        showElm(entries[i].target);
+        }
+    },{
+        rootMargin: '-10% 0% -10% 0%'
+    });
+
+    const elements = document.querySelectorAll('.e');
+    for(let i = 0; i < elements.length; i++) {
+        observer.observe(elements[i]);
+    }
+    const anotherElements = document.querySelectorAll('.bigger');
+    for (let i = 0; i < anotherElements.length; i++) {
+        observer.observe(anotherElements[i]);
+    }
+    // 領域内に入ったとき実行する処理
+    function showElm(element) {
+        if (element.classList.contains('e')) {
+            element.classList.add('e-v');
+        } else if (element.classList.contains('bigger')) {
+            element.classList.add('bigger-visible');
+        }
+        observer.unobserve(element);
     }
 
 

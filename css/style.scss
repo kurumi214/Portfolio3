@@ -40,6 +40,39 @@ p {
     margin: 0;
 }
 
+.e {
+    opacity: 0;
+    }
+    .e-v {
+        animation: fadeInUP 
+        1.3s ease forwards;
+    }
+    @keyframes fadeInUP {
+        0% {
+        opacity: 0;
+        transform: translateY( 40px );
+        }
+        100% {
+        opacity: 1;
+        transform: translateY( 0 );
+        }
+}
+.bigger {
+    opacity: 0;
+    }
+    .bigger-visible {
+        opacity: 1;
+        animation: bigger 0.5s ease forwards;
+    }
+    @keyframes bigger {
+        0% {
+            transform: scale(0.4);
+        }
+        100% {
+            transform: scale(1);
+        }
+}
+
 // component
 .c-title {
     text-align: center;
@@ -518,7 +551,7 @@ p {
 .l-header-product {
     width: 100%;
     padding: 9rem 0rem 2rem 0rem;
-    background-color: var(--background-primary);
+    background-color: #fffbf9;
     position: fixed;
     z-index: 99899;
     height: 0;
@@ -640,11 +673,15 @@ p {
             width: 100%;
             object-fit: contain;
         }
+        // l-hamburger-news-bottom
         &-bottom {
-            padding: 2rem;
+            padding: 2rem 4rem 0 4rem;
             display: flex;
+            justify-content: space-between;
             color: #c09862;
+            // l-hamburger-news-bottom-content
             &-content {
+                width: 18rem;
                 margin-right: 20px;
                 h2 {
                     font-size: 3vw;
@@ -670,17 +707,19 @@ p {
                     font-size: 1rem;
                 }
             }
+            // l-hamburger-news-bottom-menu
             &-menu {
+                width: 8rem;
                 &-wrap {
                     gap: 10px;
                     display: flex;
                 }
                 &-img {
                     margin-bottom: 10px;
-                    width: 12vw;
+                    width: 8rem;
                     aspect-ratio: 200 / 200;
-                    border-radius: 2vw;
-                    border: 2px solid #c09862;
+                    border-radius: 1vw;
+                    border: 1px solid #c09862;
                     overflow: hidden;
                     object-fit: cover;
                     object-position: center;
@@ -713,6 +752,13 @@ p {
         &-title {
             font-size: 1.5rem;
             font-weight: 500;
+            a {
+                transition: all .5s;
+                &:hover {
+                    color: var(--accent-secondary);
+                    transition: all .5s;
+                }
+            }
             span {
                 font-size: 0.8rem;
                 margin-left: 10px;
@@ -926,7 +972,7 @@ p {
     }
 }
 
-// column-main
+// l-column-main
 .l-column-main {
     overflow: hidden;
     margin: 0 auto;
@@ -936,6 +982,7 @@ p {
         width: 650px;
     }
 
+    // l-column-main-hero
     &-hero {
         position: relative;
         margin-top: 80px;
@@ -962,6 +1009,7 @@ p {
             }
         }
 
+        // l-column-main-hero-title
         &-title {
             width: 100%;
             font-size: 4rem;
@@ -1432,7 +1480,7 @@ p {
                 position: absolute;
                 top: 19vh;
                 img {
-                    width: 140px;
+                    width: 135px;
                     @media (max-width: 979px) and (orientation: portrait) {
                         width: 27%;
                     }
