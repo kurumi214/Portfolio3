@@ -23,6 +23,11 @@ body {
     font-family: 'Montserrat';
     color: var(--text);
 }
+:root{
+	scroll-padding: 80px;
+	scroll-behavior: smooth;
+}
+
 ul {
     padding-inline-start: unset;
 }
