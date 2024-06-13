@@ -572,7 +572,7 @@ p {
   text-align: center;
 }
 .l-header-product-item-maindish {
-  background-image: url(./img/hamburger-menu01.jpg);
+  background-image: url(../img/hamburger-menu01.jpg);
   background-size: cover;
 }
 .l-header-product-item-soup {
