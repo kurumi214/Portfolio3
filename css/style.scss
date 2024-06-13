@@ -555,7 +555,7 @@ p {
 // l-header-product
 .l-header-product {
     width: 100%;
-    padding: 9rem 0rem 2rem 0rem;
+    padding-top: 8rem;
     background-color: #fffbf9;
     position: fixed;
     z-index: 99899;
@@ -568,7 +568,7 @@ p {
     &-wrap {
         display: flex;
         justify-content: center;
-        margin: 0;
+        margin: 0 0 2rem 0;
         gap: 3rem;
     }
 
@@ -614,7 +614,6 @@ p {
 
     &-link {
         padding-top: 2rem;
-        margin-top: 2rem;
         border-top: solid 1px var(--text-secondary);
         cursor: pointer;
         transition: all .3s;
@@ -641,7 +640,7 @@ p {
 }
 .l-header-product.active {
     display: block;
-    height: 325px;
+    height: 395px;
     visibility: visible;
 }
 
@@ -789,19 +788,19 @@ p {
             aspect-ratio: 370 / 370;
 
             &-maindish {
-                background-image: url(/img/hamburger-menu01.jpg);
+                background-image: url(../img/hamburger-menu01.jpg);
                 background-size: cover;
             }
             &-soup {
-                background-image: url(/img/hamburger-menu02.jpg);
+                background-image: url(../img/hamburger-menu02.jpg);
                 background-size: cover;
             }
             &-salad {
-                background-image: url(/img/hamburger-menu03.jpg);
+                background-image: url(../img/hamburger-menu03.jpg);
                 background-size: cover;
             }
             &-smoothie {
-                background-image: url(/img/hamburger-menu04.jpg);
+                background-image: url(../img/hamburger-menu04.jpg);
                 background-size: cover;
             }
 
