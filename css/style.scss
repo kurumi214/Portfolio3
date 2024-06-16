@@ -562,6 +562,7 @@ p {
     height: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 
 
     // l-header-product-wrap
@@ -575,7 +576,7 @@ p {
     // l-header-product-item
     &-item {
         position: relative;
-        width: 14vw;
+        width: 10rem;
         aspect-ratio: 230 / 300;
         border-radius: 0.5vw;
         font-size: 0.7rem;
@@ -613,7 +614,7 @@ p {
     }
 
     &-link {
-        padding-top: 2rem;
+        padding: 2rem 0;
         border-top: solid 1px var(--text-secondary);
         cursor: pointer;
         transition: all .3s;
@@ -634,13 +635,12 @@ p {
         }
         &:hover {
             color: var(--accent-secondary);
-            transition: all .3s;
         }
     }
 }
 .l-header-product.active {
     display: block;
-    height: 395px;
+    height: 20.5rem;
     visibility: visible;
 }
 
@@ -679,44 +679,58 @@ p {
         }
         // l-hamburger-news-bottom
         &-bottom {
-            padding: 2rem 4rem 0 4rem;
+            padding: 3rem;
             display: flex;
             justify-content: space-between;
             color: #c09862;
+
+            @media (max-width: 979px) and (orientation: portrait) {
+                display: block !important;
+            }
+
             // l-hamburger-news-bottom-content
             &-content {
                 width: 18rem;
                 margin-right: 20px;
                 h2 {
-                    font-size: 3vw;
+                    font-size: 1.5rem;
                     font-weight: normal;
                 }
-                h3 {
+                span {
                     gap: 10px;
                     margin: 1rem 0;
-                    font-size: 4vw;
-                    font-weight: normal;
-                    display: inline-flex;
+                    font-size: 3rem;
+                    display: flex;
                     align-items: center;
-                    justify-content: center;
-                    span {
-                        padding: 4px 8px;
-                        border-radius: 100vw;
-                        font-size: 1rem;
-                        background-color: #c09862;
-                        color: #144719;
-                    }
+                }
+                &-date {
+                    width: 1.1rem;
+                    padding: 4px 8px;
+                    border-radius: 100vw;
+                    font-size: 1rem;
+                    background-color: #c09862;
+                    color: #144719;
                 }
                 p {
                     font-size: 1rem;
                 }
+
+                @media (max-width: 979px) and (orientation: portrait) {
+                    display: flex;
+                    margin-right: 0;
+                    gap: 10px;
+                }
             }
+
             // l-hamburger-news-bottom-menu
             &-menu {
                 width: 8rem;
                 &-wrap {
-                    gap: 10px;
                     display: flex;
+                    gap: 20px;
+                    @media (max-width: 979px) and (orientation: portrait) {
+                        justify-content: center;
+                    }
                 }
                 &-img {
                     margin-bottom: 10px;
