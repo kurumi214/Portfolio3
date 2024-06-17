@@ -655,6 +655,7 @@ p {
     overflow: hidden;
 
     transition: all 0.5s ease-in-out;
+    transform-origin: top;
 
     @media (max-width: 979px) and (orientation: portrait) {
         flex-direction: column-reverse;
@@ -662,6 +663,7 @@ p {
     }
 
     &.is-active{
+        transform: scaleY(1);
         visibility: visible;
         height: 100vh !important
     }
