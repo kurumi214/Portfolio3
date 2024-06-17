@@ -663,7 +663,6 @@ p {
     }
 
     &.is-active{
-        transform: scaleY(1);
         visibility: visible;
         height: 100vh !important
     }
