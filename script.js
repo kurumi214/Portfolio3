@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     // ヘッダーハンバーガーボタンと関連要素を選択
     const hamburger = document.querySelector(".l-hamburger"); // ハンバーガーボタンを選択
-    const headerHamburger = document.querySelector(".l-header-hamburger"); // ヘッダーハンバーガーボタンを選択
+    const headerHamburger = document.querySelector(".l-header-hamburger");
 
     const header = document.querySelector('.l-header'); // ヘッダーを選択
-    const headerContainer = document.querySelector('.l-header-container'); // ヘッダーコンテナを選択
-    const headerMenu = document.querySelector('.l-header-menu'); // メニューを選択
-    const headerLogo = document.querySelector('.l-header-logo'); // ロゴを選択
+    const headerContainer = document.querySelector('.l-header-container');
+    const headerMenu = document.querySelector('.l-header-menu');
+    const headerLogo = document.querySelector('.l-header-logo');
 
+    // ハンバーガーメニュー
     if (headerHamburger && hamburger && header && headerContainer && headerMenu && headerLogo) {
         // l-header-hamburgerボタンをクリックしたときのイベントリスナー
         headerHamburger.addEventListener("click", function () {
@@ -19,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
             headerMenu.classList.toggle("is-active");
             headerLogo.classList.toggle("is-active");
 
+            // メニューが開かれた場合、スクロール位置をトップにリセット
+            if (headerHamburger.classList.contains("is-active")) {
+                hamburger.scrollTop = -999999;
+            }
+
             // ボディのオーバーフローを制御
             if (document.body.style.overflow !== "hidden") {
                 document.body.style.overflow = "hidden"; 
@@ -27,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+
 
     // l-header-product-item Productをホバーしたときのイベントリスナー
     const hoverTarget = document.getElementById("is-active");
